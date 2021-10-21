@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
-
+//Sets the image of the horn and the corresponding mp3 file
 function setHorn(event){
   var hornImage = document.getElementsByTagName("img")[0];
   hornImage.setAttribute("src", "assets/images/" + event.target.value + ".svg");
@@ -11,10 +11,11 @@ function setHorn(event){
   hornAudio.setAttribute("src", "assets/audio/" + event.target.value + ".mp3"); 
 } 
 
-function setVolume(event){
+//Sets the icon of the volume
+function setVolumeIcon(event){
   var volumeValue = document.getElementById("volume").value;
   var volumeIcon = document.getElementsByTagName("img")[1];
-  playSound();
+
   if( volumeValue == 0){
     volumeIcon.setAttribute("src", "assets/icons/volume-level-0.svg");  
   }
@@ -29,15 +30,19 @@ function setVolume(event){
   } 
 }
 
-function playSound(){
+// when you  click the "play soound", this function makes the sound
+function playSound(event){
   var volumeValue = document.getElementById("volume").value;
-  var volumeLevel = document.getElementById("volume");
-  volumeLevel.volume = volumeValue/100;
-  console.log(volumeLevel.volume);
+  var hornAudio = document.getElementsByClassName("hidden")[0];
+  hornAudio.volume = (volumeValue/100);
+  hornAudio.play();
 }
 
 function init() {
-  // TODO
+  //when you change the horn option
   document.getElementById("horn-select").addEventListener('change', setHorn);
-  document.getElementById("volume-controls").addEventListener('change', setVolume);
+  //when you change the volume
+  document.getElementById("volume-controls").addEventListener('change', setVolumeIcon);
+  //when you click the 'play sound'
+  document.querySelector('button').addEventListener('click', playSound);
 }
