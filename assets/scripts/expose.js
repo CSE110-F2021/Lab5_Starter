@@ -14,7 +14,7 @@ function setHorn(event){
 function setVolume(event){
   var volumeValue = document.getElementById("volume").value;
   var volumeIcon = document.getElementsByTagName("img")[1];
-  console.log(volumeIcon);
+  playSound();
   if( volumeValue == 0){
     volumeIcon.setAttribute("src", "assets/icons/volume-level-0.svg");  
   }
@@ -27,6 +27,13 @@ function setVolume(event){
   else if( volumeValue >= 67){
     volumeIcon.setAttribute("src", "assets/icons/volume-level-3.svg");  
   } 
+}
+
+function playSound(){
+  var volumeValue = document.getElementById("volume").value;
+  var volumeLevel = document.getElementById("volume");
+  volumeLevel.volume = volumeValue/100;
+  console.log(volumeLevel.volume);
 }
 
 function init() {
