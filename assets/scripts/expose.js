@@ -26,6 +26,7 @@ function init() {
     }
     else if(volume < 67){
       vol_pic.src = "/assets/icons/volume-level-2.svg";
+      //
     }
     else{
       vol_pic.src = "/assets/icons/volume-level-3.svg";
