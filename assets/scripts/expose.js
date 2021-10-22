@@ -16,7 +16,7 @@ function init() {
         }
     });
 
-    let volume = 0;
+    let volume = 50;
     const vol_setting = document.getElementById("volume-controls");
     const vol_val = vol_setting.querySelector("[type ='range']");
     const vol_pic = vol_setting.querySelector("img");
