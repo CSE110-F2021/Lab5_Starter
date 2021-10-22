@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', init);
 const jsConfetti = new JSConfetti()
+
 //Sets the image of the horn and the corresponding mp3 file
 function setHorn(event){
   var hornImage = document.getElementsByTagName("img")[0];
@@ -39,7 +40,7 @@ function playSound(event){
   var hornSelect = document.getElementById("horn-select").value;
   // Display Confetti if we select the party horn
   if(hornSelect == "party-horn"){
- 
+
     jsConfetti.addConfetti()
   }
 }
