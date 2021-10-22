@@ -36,7 +36,7 @@ function init() {
   }
 
   function playAudio() {
-   // audio. = volume.value;
+    audio.volume = Number(volume.value) / 100;
     audio.play();
     if (selection.selectedOptions[0].value == "party-horn"){
       jsConfetti.addConfetti();
@@ -44,7 +44,7 @@ function init() {
   }
 
   function volumeChange() {
-    if (volume.value == "0")
+    if (volume.value == 0)
       sound["src"] = "assets/icons/volume-level-0.svg";
     if (volume.value > 0 && volume.value < 33)
       sound["src"] = "assets/icons/volume-level-1.svg";
