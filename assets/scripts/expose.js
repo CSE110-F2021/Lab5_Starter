@@ -44,7 +44,7 @@ function init() {
         audio.item(0).play();
         if (h == 1) {
             jsConfetti.addConfetti();
-            h == 0;
+            h = 0;
         }
     });
 
