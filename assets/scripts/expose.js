@@ -16,10 +16,12 @@ function init() {
         }
     });
 
-    let volume = 50;
+    
     const vol_setting = document.getElementById("volume-controls");
     const vol_val = vol_setting.querySelector("[type ='range']");
     const vol_pic = vol_setting.querySelector("img");
+    let volume = 50;
+    vol_pic.src = "./assets/icons/volume-level-2.svg";
     vol_val.addEventListener("change", (event) => {
         volume = event.target.value;
         if (volume < 1) {
