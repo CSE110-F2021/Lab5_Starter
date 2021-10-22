@@ -28,8 +28,8 @@ function init() {
         utterance.voice = voices[voice_chosen];
         let img = document.querySelector("img");
         speechSynthesis.speak(utterance);
-        img.src = "assets/images/smiling-open.png";
-        utterance.onend = function() { img.src = "assets/images/smiling.png" };
+        img.src = ".assets/images/smiling-open.png";
+        utterance.onend = function() { img.src = ".assets/images/smiling.png" };
 
     });
 
