@@ -36,8 +36,6 @@ function init() {
   const button = document.querySelector('button');
 
   button.addEventListener('click', event => {
-    console.log(event.detail);
-    audio.play();
     if(hornType == 'party-horn') {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
