@@ -3,12 +3,12 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const selectElement = document.getElementById('horn-select');
+  // TODO
 }
 
 const selectElement = document.getElementById('horn-select');
 
 selectElement.addEventListener('change', (event) => {
-  document.querySelector('img').src = "../assets/images/" + "air-horn" + '.svg';
-  console.log(document.querySelector('img').src);
+  //console.log(event.target.value);
+  document.querySelector('img').src = "../assets/images/" + event.target.value + '.svg';
 });
