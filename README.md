@@ -1,3 +1,2 @@
 # Lab 5 - Starter
-Dorothy Chou
-Joshua Singer
+Dorothy Chou, Joshua Singer
