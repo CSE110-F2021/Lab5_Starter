@@ -41,7 +41,6 @@ function volumeControl(imgSrc) {
 
   volCont.addEventListener("change", (e) => {
     let volume = e.target.value;
-    console.log(volume);
 
     if (volume == 0) {
       imgSrc[1].src = "assets/icons/volume-level-0.svg";
@@ -62,10 +61,11 @@ function audioPlay() {
 
   audioBtn.addEventListener("click", (e) => {
     var optionSrc = document.getElementsByClassName("hidden")[0].src;
+    if (!audio[0].src.includes("mp3")) {
+      return;
+    }
     audio[0].play();
-    console.log(optionSrc);
     if (optionSrc.includes("assets/audio/party-horn.mp3")) {
-      console.log("working");
       jsConfetti.addConfetti();
     }
   });
