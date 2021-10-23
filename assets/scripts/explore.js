@@ -2,6 +2,8 @@
 window.addEventListener("DOMContentLoaded", init);
 function init() {
   // TODO
+  const imgSrc = document.querySelectorAll("img");
+
   VoiceList();
   if (
     typeof speechSynthesis !== "undefined" &&
@@ -11,8 +13,16 @@ function init() {
   }
   console.log(document.getElementById("voice-select"));
   Updaing_text();
-  press_button();
+  press_button(imgSrc);
+  while(){
+      if (speechSynthesis.speaking) {
+    console.log("still speaking");
+  }
+  }
+  // setTimeout(update_pic(imgSrc), 5000);
+
 }
+
 function VoiceList() {
   if (typeof speechSynthesis === "undefined") {
     return;
@@ -41,7 +51,7 @@ function Updaing_text() {
     console.log(input.placeholder);
   }
 }
-function press_button() {
+function press_button(imgSrc) {
   let language = document.getElementById("voice-select");
   var val = "";
   language.addEventListener("change", (event) => {
@@ -59,5 +69,10 @@ function press_button() {
     speech.pitch = 1;
     console.log(speech.lang);
     window.speechSynthesis.speak(speech);
+    imgSrc[0].src = "assets/images/smiling-open.png";
   }
+}
+function update_pic(imgSrc) {
+  imgSrc[0].src = "assets/images/smiling-open.png";
+  // console.log(imgSrc[0].src);
 }

@@ -65,7 +65,6 @@ function audioPlay() {
     audio[0].play();
     console.log(optionSrc);
     if (optionSrc.includes("assets/audio/party-horn.mp3")) {
-      console.log("working");
       jsConfetti.addConfetti();
     }
   });
