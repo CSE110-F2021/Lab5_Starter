@@ -6,20 +6,20 @@ function init() {
   var select = document.getElementById('horn-select');
   var volume = document.getElementById('volume');
   const img = document.querySelector('img');
-  const icon = document.getElementById('volume_controls').getElementsByTagName('img');
+  const icon = document.querySelector("img[alt='Volume level 2']");
   select.addEventListener('change', setHorn);
-  volume.addEventListener('volume', setVolume);
+  volume.addEventListener('input', setVolume);
 
   function setVolume() {
-    var vol = volume.value;
+    var vol = parseInt(volume.value);
     if(vol == 0){
       icon.src = 'assets/icons/volume-level-0.svg'
     } else if(vol < 33){
       icon.src = 'assets/icons/volume-level-1.svg'
     } else if(vol < 67){
-      icon.src = 'assets/icons/volume-level-2'
+      icon.src = 'assets/icons/volume-level-2.svg'
     } else{
-      icon.src = 'assets/icons/volume-level-3'
+      icon.src = 'assets/icons/volume-level-3.svg'
     }
   }
 
