@@ -4,13 +4,13 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init() {
   // TODO
-  optionSelector();
-  // var button = document.querySelectorAll("button");
-  // button[0].onclick = setAudio;
+  const imgSrc = document.querySelectorAll("img");
+
+  optionSelector(imgSrc);
+  volumeControl(imgSrc);
 }
-function optionSelector() {
+function optionSelector(imgSrc) {
   const horns = document.getElementById("horn-select");
-  var imgSrc = document.querySelectorAll("img");
 
   horns.addEventListener("change", (e) => {
     var val = e.target.value;
@@ -31,6 +31,13 @@ function optionSelector() {
     }
   });
 }
-function setAudio() {
-  document.getElementsByClassName("hidden").src = "assets/audio/air-horn.mp3";
+function volumeControl(imgSrc) {
+  var vol = document.getElementById("volume");
+  const input = document.querySelectorAll("input");
+  console.log(`${vol.value}`);
+  // console.log(`${input.value}`);
+
+  if (input.value == 0) {
+    imgSrc[1].src = "assets/icons/volume-level-0.svg";
+  }
 }
