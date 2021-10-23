@@ -19,6 +19,10 @@ function init() {
     voice.addEventListener("change", (event) => {
         voice_chosen = voice.value;
     })
+    
+    let default_img = document.querySelector("img");
+    default_img.src = ".assets/images/smiling.png"
+
 
     let button = document.querySelector("button");
     button.addEventListener("click", (event) => {
