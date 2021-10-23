@@ -1,6 +1,7 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
+var jsConfetti = new JSConfetti();
 
 function init() {
   //variable declaration 
@@ -10,6 +11,7 @@ function init() {
   var icon = document.querySelector("img[alt='Volume level 2']");
   var audio = document.querySelector('audio');
   var button = document.querySelector('button');
+  
 
   //EventListener
   select.addEventListener('change', setHorn);
@@ -24,7 +26,8 @@ function init() {
     } else if (choice === 'car-horn'){
       audio.src = 'assets/audio/car-horn.mp3'
     } else  {
-      audio.src = 'assets/audio/party-horn.mp3'
+      audio.src = 'assets/audio/party-horn.mp3';
+      jsConfetti.addConfetti();
     }
     audio.load();
     audio.play();
