@@ -30,7 +30,13 @@ function init() {
         utterance.voice = listVoices[i];
       }
     }
-    speechSynthesis.speak(utterance);
     
+    speechSynthesis.speak(utterance);
+    document.querySelector('section>img').src = "../assets/images/smiling-open.png";
+
+    utterance.onend = function() {
+      document.querySelector('section>img').src = "../assets/images/smiling.png";
+    }
   });
+
 }
