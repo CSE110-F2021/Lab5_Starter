@@ -9,9 +9,12 @@ function init() {
     speechSynthesis.onvoiceschanged = VoiceList;
   }
   console.log(document.getElementById("voice-select"))
+  const imgSrc = document.querySelectorAll("img");
+  
 
   Updaing_text();
-  press_button();
+  press_button(imgSrc);
+  
 
 }
 
@@ -52,10 +55,10 @@ function Updaing_text()
 }
 }
 
-function press_button(){
+function press_button(imgSrc){
 
   let language = document.getElementById("voice-select");
-  var val=""
+  var val="";
 
   language.addEventListener("change",(event)=> {
     val = event.target.value;
@@ -67,17 +70,27 @@ function press_button(){
   audio_button.addEventListener("click",play_speech);
   function play_speech()
   {
+
+    imgSrc[0].src="assets/images/smiling-open.png";
     let speech = new SpeechSynthesisUtterance();
     speech.text = document.querySelector('textarea').placeholder; 
     speech.lang = val;
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;       
-    console.log(speech.lang)
+    console.log(speech.lang);
+    window.speechSynthesis.speak(speech);
+    speech.onend = function(event){
+      console.log("Hel?")
+      imgSrc[0].src = "assets/images/smiling.png";;
+    }
+ 
 
-  window.speechSynthesis.speak(speech);
-
+  
 }
+
+
+  
 }
 
 
