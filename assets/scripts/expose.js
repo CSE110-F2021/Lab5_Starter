@@ -5,8 +5,6 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   // TODO
   optionSelector();
-  // var button = document.querySelectorAll("button");
-  // button[0].onclick = setAudio;
 }
 function optionSelector() {
   const horns = document.getElementById("horn-select");
@@ -31,6 +29,6 @@ function optionSelector() {
     }
   });
 }
-function setAudio() {
-  document.getElementsByClassName("hidden").src = "assets/audio/air-horn.mp3";
-}
+// function setAudio() {
+//   document.getElgementsByClassName("hidden").src = "assets/audio/air-horn.mp3";
+// }
