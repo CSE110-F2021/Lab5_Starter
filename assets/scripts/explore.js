@@ -9,7 +9,6 @@ function init() {
   ) {
     speechSynthesis.onvoiceschanged = VoiceList;
   }
-  console.log(document.getElementById("voice-select"));
   const imgSrc = document.querySelectorAll("img");
 
   Updaing_text();
@@ -45,7 +44,6 @@ function Updaing_text() {
 
   function update_text(e) {
     document.getElementById("text-to-speak").placeholder = e.target.value;
-    console.log(input.placeholder);
   }
 }
 
@@ -56,7 +54,6 @@ function press_button(imgSrc) {
   language.addEventListener("change", (event) => {
     val = event.target.value;
   });
-  console.log(val);
 
   const audio_button = document.querySelector("button");
 
@@ -69,10 +66,8 @@ function press_button(imgSrc) {
     speech.volume = 1;
     speech.rate = 1;
     speech.pitch = 1;
-    console.log(speech.lang);
     window.speechSynthesis.speak(speech);
     speech.onend = function (event) {
-      console.log("Hel?");
       imgSrc[0].src = "assets/images/smiling.png";
     };
   }

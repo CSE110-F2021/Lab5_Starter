@@ -61,6 +61,9 @@ function audioPlay() {
 
   audioBtn.addEventListener("click", (e) => {
     var optionSrc = document.getElementsByClassName("hidden")[0].src;
+    if (!audio[0].src.includes("mp3")) {
+      return;
+    }
     audio[0].play();
     if (optionSrc.includes("assets/audio/party-horn.mp3")) {
       jsConfetti.addConfetti();
