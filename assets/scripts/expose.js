@@ -3,15 +3,37 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
+  //variable declaration 
   var select = document.getElementById('horn-select');
   var volume = document.getElementById('volume');
-  const img = document.querySelector('img');
-  const icon = document.querySelector("img[alt='Volume level 2']");
+  var img = document.querySelector('img');
+  var icon = document.querySelector("img[alt='Volume level 2']");
+  var audio = document.querySelector('audio');
+  var button = document.querySelector('button');
+
+  //EventListener
   select.addEventListener('change', setHorn);
   volume.addEventListener('input', setVolume);
+  button.addEventListener('click', playSound);
 
+  //function to adjust audio source and play audio
+  function playSound(){
+    var choice = select.value;
+    if(choice === 'air-horn'){
+      audio.src = 'assets/audio/air-horn.mp3'
+    } else if (choice === 'car-horn'){
+      audio.src = 'assets/audio/car-horn.mp3'
+    } else  {
+      audio.src = 'assets/audio/party-horn.mp3'
+    }
+    audio.load();
+    audio.play();
+  }
+
+  //function to adjust audio volume
   function setVolume() {
     var vol = parseInt(volume.value);
+    audio.volume = vol/100;
     if(vol == 0){
       icon.src = 'assets/icons/volume-level-0.svg'
     } else if(vol < 33){
@@ -23,6 +45,7 @@ function init() {
     }
   }
 
+  //function to set images based on horn selection
   function setHorn() {
     var choice = select.value;
     if(choice === 'air-horn'){
