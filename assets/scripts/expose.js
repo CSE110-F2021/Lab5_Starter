@@ -53,14 +53,4 @@ function init() {
     }
   }
   
-  
-  //(event)  => {
-    //if event.target.value == "air-horn"{
-      //document.querySelector("img").src = "assets/images/party-horn.svg"
-    //}
-
-
-    // code to run when the event is triggered
-  
-  //})
 }
