@@ -25,6 +25,10 @@ function init() {
       }
     }
     speechSynthesis.speak(utter);
+    while(speechSynthesis.speaking) {
+      document.querySelector("header + img").src = "assets/images/smiling-open.png";
+    }
+    document.querySelector("header + img").src = "assets/images/smiling.png";
   });
 }
 
