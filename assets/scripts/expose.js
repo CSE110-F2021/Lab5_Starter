@@ -47,8 +47,10 @@ function init() {
   }
 
   function playSound(){
-    document.querySelector("audio").play();
-    if (document.querySelector('img').alt == "Party Horn Image"){
+    // a way to catch exception according to 
+    // https://stackoverflow.com/questions/31509619/how-to-catch-domexception-in-chrome
+    document.querySelector("audio").play().catch(function(error){console.log("Can't play sound when no audio type selected")});
+    if (document.querySelector('img').alt == "Party Horn Image" && document.querySelector("audio").volume >0){
       jsConfetti.addConfetti()
     }
   }
