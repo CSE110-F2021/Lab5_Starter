@@ -21,11 +21,6 @@ synthesis, so it might take something a little clever
  using the SpeechSynthesis properties linked above
  */
  
- if (synth.onvoiceschanged !== undefined) {
-  window.alert("invoked");
-  synth.onvoiceschanged = populateVoiceList;
-}
-
 function init() {
   var select = document.getElementById('voice-select');
   var button = document.getElementById('but');
@@ -41,10 +36,12 @@ function init() {
     voices = synth.getVoices();
     populateVoiceList();
   },50);
+
   button.addEventListener('click', function(){
     speakNow();
   });
-  
+
+
   var text="";
   //img.src = 'assets/images/smiling-open.png';
   // TODO
@@ -61,6 +58,10 @@ function init() {
       voiceSelect.appendChild(option);
     }
     //voiceSelect.selectedIndex = selectedIndex;
+  }
+  if (synth.onvoiceschanged !== undefined) {
+    window.alert("invoked");
+    synth.onvoiceschanged = populateVoiceList;
   }
   
   textArea.addEventListener('input',function(){
