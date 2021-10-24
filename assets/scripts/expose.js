@@ -1,6 +1,7 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
+var confetti = new JSConfetti();
 
 function init() {
   let sound = null;
@@ -40,8 +41,8 @@ function init() {
       return;
     
     document.querySelector("button + audio").play();
-    if(sound == 'party-horn') {
-      //also do confetti
+    if(sound == 'party-horn' && document.querySelector("button + audio").volume != 0) {
+      confetti.addConfetti();
     }
   });
 }
