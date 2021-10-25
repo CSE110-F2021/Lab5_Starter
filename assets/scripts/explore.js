@@ -6,7 +6,7 @@ function init() {
   var synth = window.speechSynthesis;
   var voiceSelect = document.getElementById('voice-select');
   var inputTxt = document.getElementById('text-to-speak');
-  var button = documentquerySelector('button');
+  var button = document.querySelector("button");
 
   var voices = [];
   var image = document.querySelector("img");
@@ -32,7 +32,8 @@ function init() {
     speechSynthesis.onvoiceschanged = voiceListPopulator;
   }
 
-  button.onClick = function(event) {
+  button.onclick = function(event) {
+    console.log("pressed button");
     event.preventDefault();
   
     var textToSpeech = new SpeechSynthesisUtterance(inputTxt.value);
@@ -42,9 +43,9 @@ function init() {
         textToSpeech.voice = voices[i];
       }
     }
-    speechSynthesis.speak(textToSpeech);
+    synth.speak(textToSpeech);
 
-    if(speechSynthesis.speaking){
+    if(synth.speaking){
       image.src = "/assets/images/smiling-open.png";
     }
   
