@@ -60,7 +60,6 @@ function init() {
     //voiceSelect.selectedIndex = selectedIndex;
   }
   if (synth.onvoiceschanged !== undefined) {
-    window.alert("invoked");
     synth.onvoiceschanged = populateVoiceList;
   }
   
