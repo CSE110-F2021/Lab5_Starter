@@ -33,7 +33,6 @@ function init() {
   }
 
   button.onclick = function(event) {
-    console.log("pressed button");
     event.preventDefault();
   
     var textToSpeech = new SpeechSynthesisUtterance(inputTxt.value);
