@@ -31,10 +31,30 @@ docuSele.addEventListener('change',(event) => {
 //const log = document.getElementById('horn-select');
 
 //change audio
+ var volcon = document.getElementById("volume-controls");
+ var imgOfVolCon = volcon.querySelector("img")
 var button = document.querySelector("botton");
+volcon.addEventListener('change', (event) => {
+  if(volcon == 0){
+    imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
+  }
+  else if(volcon < 33){
+    imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
+
+  }
+  else if(volcon < 67){
+    imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
+
+  }
+  else {
+    imgOfVolCon.src = 'assets/icons/volume-level-3.svg';
+
+  }
+})
 const jsCon = new JSConfetti();
 button.addEventListener('click', (event) => {
-  jsCon.addConfetti();
+  if(tagg == 'party-horn')
+    jsCon.addConfetti();
 })
 
 
