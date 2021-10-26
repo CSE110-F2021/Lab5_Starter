@@ -49,8 +49,11 @@ volcon.addEventListener('change', (event) => {
 })
 const jsCon = new JSConfetti();
 button.addEventListener('click', (event) => {
-  if(tagg == 'party-horn' && volumeH > 0)
+  if(docuSele.value == 'party-horn')
+  {
     jsCon.addConfetti();
+  }
+  vol.play();
 })
 
 
