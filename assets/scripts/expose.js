@@ -31,18 +31,19 @@ docuSele.addEventListener('change',(event) => {
 //const log = document.getElementById('horn-select');
 
 //change audio
- var volcon = document.querySelector("volume-controls");
+ var volcon = document.getElementById("volume-controls");
  var imgOfVolCon = volcon.querySelector("img")
 var button = document.querySelector("botton");
 volcon.addEventListener('change', (event) => {
-  if(volcon == 0){
+  var volume = e.target.value;
+  if(volume == 0){
     imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
   }
-  else if(volcon < 33){
+  else if(volume < 33){
     imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
 
   }
-  else if(volcon < 67){
+  else if(volume < 67){
     imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
 
   }
