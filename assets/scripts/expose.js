@@ -31,7 +31,7 @@ docuSele.addEventListener('change',(event) => {
 //const log = document.getElementById('horn-select');
 
 //change audio
- var volcon = document.getElementById("volume-controls");
+ var volcon = document.querySelector("volume-controls");
  var imgOfVolCon = volcon.querySelector("img")
 var button = document.querySelector("botton");
 volcon.addEventListener('change', (event) => {
