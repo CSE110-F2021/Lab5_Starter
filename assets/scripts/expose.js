@@ -22,7 +22,7 @@ docuSele.addEventListener('change',(event) => {
     if(volTagg=='air-horn'){
       vol.src = 'assets/audio/air-horn.svg';
     }
-    else if(tagg=='car-horn'){
+    else if(volTagg=='car-horn'){
       vol.src = 'assets/audio/car-horn.svg';
     }
     else
