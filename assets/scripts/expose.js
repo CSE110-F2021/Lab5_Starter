@@ -32,13 +32,16 @@ var button = document.querySelector("botton");
 volcon.addEventListener('change', (event) => {
   var volumeH = event.target.value;
   if(volumeH == 0){
+    vol.volume = volumeH/100;
     imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
   }
   else if(volumeH < 33){
+    vol.volume = volumeH/100;
     imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
 
   }
   else if(volumeH < 67){
+    vol.volume = volumeH/100;
     imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
 
   }
@@ -49,7 +52,7 @@ volcon.addEventListener('change', (event) => {
 })
 const jsCon = new JSConfetti();
 button.addEventListener('click', (event) => {
-  if(docuSele.value == 'party-horn')
+  if(docuSele.value == 'party-horn' && vol.volume > 0)
   {
     jsCon.addConfetti();
   }
