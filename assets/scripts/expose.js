@@ -50,7 +50,7 @@ volcon.addEventListener("change", (event) => {
 })
 const jsCon = new JSConfetti();
 button.addEventListener("click", (event) => {
-  if(docuSele.value == "party-horn" && vol.volume > 0)
+  if(docuSele.value == "party-horn")
   {
     jsCon.addConfetti();
     vol.play();
