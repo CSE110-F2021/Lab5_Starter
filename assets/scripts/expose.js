@@ -1,4 +1,3 @@
-// expose.js
 window.addEventListener('DOMContentLoaded', init);
 function init(){
 var docuSele = document.getElementById("horn-select");
@@ -8,7 +7,6 @@ docuSele.addEventListener('change',(event) => {
   let tagg = event.target.value;
   if(tagg=='air-horn'){
     image.src = 'assets/images/air-horn.svg';
-    
   }
   else if(tagg=='car-horn'){
     image.src = 'assets/images/car-horn.svg';
@@ -29,7 +27,6 @@ docuSele.addEventListener('change',(event) => {
     else
     vol.src = 'assets/audio/party-horn.mp3';
     ;});
-//const log = document.getElementById('horn-select');
 
 //change audio
  var volcon = document.getElementById("volume-controls");
@@ -55,11 +52,10 @@ volcon.addEventListener('change', (event) => {
 })
 const jsCon = new JSConfetti();
 button.addEventListener('click', (event) => {
-  if(tagg == 'party-horn')
+  if(tagg == 'party-horn' && volume > 0)
     jsCon.addConfetti();
 })
 
 
 
 }
-
