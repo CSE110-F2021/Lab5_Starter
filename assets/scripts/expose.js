@@ -14,7 +14,9 @@ docuSele.addEventListener('change',(event) => {
   }
   else if(tagg=='car-horn'){
     image.src = 'assets/images/car-horn.svg';
-    vol.src = 'assets/audio/car-horn.mp3';
+    //vol.src = 'assets/audio/car-horn.mp3';
+    vol.setAttribute('src', 'assets/audio/car-horn.mp3');
+
 
   }
   else
