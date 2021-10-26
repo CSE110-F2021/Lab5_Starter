@@ -33,15 +33,15 @@ docuSele.addEventListener('change',(event) => {
  var imgOfVolCon = volcon.querySelector("img")
 var button = document.querySelector("botton");
 volcon.addEventListener('change', (event) => {
-  var volume = e.target.value;
-  if(volume == 0){
+  var volumeH = event.target.value;
+  if(volumeH == 0){
     imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
   }
-  else if(volume < 33){
+  else if(volumeH < 33){
     imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
 
   }
-  else if(volume < 67){
+  else if(volumeH < 67){
     imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
 
   }
@@ -52,7 +52,7 @@ volcon.addEventListener('change', (event) => {
 })
 const jsCon = new JSConfetti();
 button.addEventListener('click', (event) => {
-  if(tagg == 'party-horn' && volume > 0)
+  if(tagg == 'party-horn' && volumeH > 0)
     jsCon.addConfetti();
 })
 
