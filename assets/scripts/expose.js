@@ -16,7 +16,7 @@ docuSele.addEventListener('change',(event) => {
   image.src = 'assets/images/party-horn.svg';
   ;});
 
-  var vol = document.getElementById("audio");
+  var vol = document.querySelector("audio");
   docuSele.addEventListener('change',(event) => {
     let volTagg = event.target.value;
     if(volTagg=='air-horn'){
