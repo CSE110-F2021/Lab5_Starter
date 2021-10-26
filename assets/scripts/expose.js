@@ -3,7 +3,6 @@ function init(){
 var docuSele = document.getElementById("horn-select");
 var image = document.querySelector("img");
 var vol = document.querySelector("audio");
-
 //var seleImg = document.getElementsByID('here');
 docuSele.addEventListener('change',(event) => {
   let tagg = event.target.value;
@@ -29,19 +28,20 @@ docuSele.addEventListener('change',(event) => {
  var volcon = document.getElementById("volume-controls");
  var imgOfVolCon = volcon.querySelector("img")
 var button = document.querySelector("botton");
+  var volumeSet = document.getElementById("volume");
 volcon.addEventListener('change', (event) => {
   var volumeH = event.target.value;
   if(volumeH == 0){
-    vol.volume = volumeH/100;
+    vol.volume = volumeSet.value/100;
     imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
   }
   else if(volumeH < 33){
-    vol.volume = volumeH/100;
+    vol.volume = volumeSet.value/100;
     imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
 
   }
   else if(volumeH < 67){
-    vol.volume = volumeH/100;
+    vol.volume = volumeSet.value/100;
     imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
 
   }
