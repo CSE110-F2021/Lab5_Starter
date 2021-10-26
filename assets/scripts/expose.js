@@ -8,6 +8,7 @@ docuSele.addEventListener('change',(event) => {
   let tagg = event.target.value;
   if(tagg=='air-horn'){
     image.src = 'assets/images/air-horn.svg';
+    
   }
   else if(tagg=='car-horn'){
     image.src = 'assets/images/car-horn.svg';
@@ -20,13 +21,13 @@ docuSele.addEventListener('change',(event) => {
   docuSele.addEventListener('change',(event) => {
     let volTagg = event.target.value;
     if(volTagg=='air-horn'){
-      vol.src = 'assets/audio/air-horn.svg';
+      vol.src = 'assets/audio/air-horn.mp3';
     }
     else if(volTagg=='car-horn'){
-      vol.src = 'assets/audio/car-horn.svg';
+      vol.src = 'assets/audio/car-horn.mp3';
     }
     else
-    vol.src = 'assets/audio/party-horn.svg';
+    vol.src = 'assets/audio/party-horn.mp3';
     ;});
 //const log = document.getElementById('horn-select');
 
