@@ -48,7 +48,7 @@ volcon.addEventListener("change", (event) => {
     imgOfVolCon.src = "assets/icons/volume-level-3.svg";
   }
 })
-const jsCon = new JSConfetti();
+var jsCon = new JSConfetti();
 button.addEventListener("click", (event) => {
   if(docuSele.value == "party-horn")
   {
