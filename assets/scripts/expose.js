@@ -32,20 +32,21 @@ var button = document.querySelector("botton");
 volcon.addEventListener('change', (event) => {
   var volumeH = event.target.value;
   if(volumeH == 0){
-    vol.volume = volumeSet.value/100;
+    vol.volume = 0;
     imgOfVolCon.src = 'assets/icons/volume-level-0.svg';
   }
   else if(volumeH < 33){
-    vol.volume = volumeSet.value/100;
+    vol.volume = 0.3;
     imgOfVolCon.src = 'assets/icons/volume-level-1.svg';
 
   }
   else if(volumeH < 67){
-    vol.volume = volumeSet.value/100;
+    vol.volume = 0.6;
     imgOfVolCon.src = 'assets/icons/volume-level-2.svg';
 
   }
   else {
+    vol.volume = 1;
     imgOfVolCon.src = 'assets/icons/volume-level-3.svg';
 
   }
